@@ -14,8 +14,8 @@
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "DATABASECONNECTIONSTRING": "",
-        "DATABASENAME": ""
+        "DATABASECONNECTIONSTRING": "mongodb://localhost:32768/",
+        "DATABASENAME": "admin"
       }
     },
     "IIS Express": {

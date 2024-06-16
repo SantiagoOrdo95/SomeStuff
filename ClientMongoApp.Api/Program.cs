@@ -1,4 +1,6 @@
+using ClientMongoApp.Application.Client.Handlers.CommandHandlers;
 using ClientMongoApp.Core.Entities;
+using ClientMongoApp.Infrastructure.Services;
 using MediatR;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
@@ -13,14 +15,14 @@ var configuration = new ConfigurationBuilder()
     .AddInMemoryCollection(new Dictionary<string, string?>()
     {
         ["ConnectionString"] = databaseConnectionString, //http:
-        ["DatabaseName"] = mongoDatabaseName, // dbName
+        ["DatabaseName"] = mongoDatabaseName // dbName:
     }).Build();
 
 // Add services to the container.
-builder.Services.Configure<DatabaseSetting>(configuration);
+builder.Services.Configure<AppSettings>(configuration);
 
 // Add services Singleton
-//builder.Services.AddSingleton<>();
+builder.Services.AddSingleton<ClientService>();
 
 builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
 
@@ -38,7 +40,7 @@ builder.Services.AddSwaggerGen(options =>
     options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFileName));
 });
 
-//builder.Services.AddMediatR(typeof().Assembly);
+builder.Services.AddMediatR(typeof(CreateClientHandler).Assembly);
 
 builder.Services.AddMemoryCache();
 
@@ -57,18 +59,3 @@ app.MapGet("/", () => "ClientMongoApp.WebApi");
 app.MapControllers();
 
 app.Run();
-
-//// Configure the HTTP request pipeline.
-//if (!app.Environment.IsDevelopment())
-//{
-//    app.UseExceptionHandler("/Error");
-//}
-//app.UseStaticFiles();
-
-//app.UseRouting();
-
-//app.UseAuthorization();
-
-//app.MapRazorPages();
-
-//app.Run();

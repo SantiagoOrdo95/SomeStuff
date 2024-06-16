@@ -10,12 +10,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientMongoApp.Api", "Clien
 		{5B7BD54B-C8DE-4564-AFFE-CD08AF6120CF} = {5B7BD54B-C8DE-4564-AFFE-CD08AF6120CF}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientMongoApp.Application", "ClientMongoApp.Application\ClientMongoApp.Application.csproj", "{5B7BD54B-C8DE-4564-AFFE-CD08AF6120CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientMongoApp.Application", "ClientMongoApp.Application\ClientMongoApp.Application.csproj", "{5B7BD54B-C8DE-4564-AFFE-CD08AF6120CF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{75AA5B31-C85A-4F79-B884-7EFABCAED4E1} = {75AA5B31-C85A-4F79-B884-7EFABCAED4E1}
+		{D5828D1A-B24B-4F15-BFDC-0CA8FC201902} = {D5828D1A-B24B-4F15-BFDC-0CA8FC201902}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientMongoApp.Infrastructure", "ClientMongoApp.Infrastructure\ClientMongoApp.Infrastructure.csproj", "{D5828D1A-B24B-4F15-BFDC-0CA8FC201902}"
 	ProjectSection(ProjectDependencies) = postProject
 		{75AA5B31-C85A-4F79-B884-7EFABCAED4E1} = {75AA5B31-C85A-4F79-B884-7EFABCAED4E1}
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientMongoApp.Infrastructure", "ClientMongoApp.Infrastructure\ClientMongoApp.Infrastructure.csproj", "{D5828D1A-B24B-4F15-BFDC-0CA8FC201902}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

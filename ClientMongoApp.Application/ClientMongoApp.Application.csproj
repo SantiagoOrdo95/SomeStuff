@@ -1,10 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Library</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;ARM64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +11,19 @@
     <PackageReference Include="MediatR" Version="11.1.0" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Client\Handlers\QueryHandlers\" />
+    <Folder Include="Client\Validators\" />
+    <Folder Include="Client\Queries\" />
+    <Folder Include="Common\Enum\" />
+    <Folder Include="Common\HttpCliente\" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\ClientMongoApp.Core\ClientMongoApp.Core.csproj" />
+    <ProjectReference Include="..\ClientMongoApp.Infrastructure\ClientMongoApp.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
