@@ -4,10 +4,10 @@
     {
         // Database connection
         public string ConnectionString { get; set; } = null!;
-        public string DatabaseName { get; set; }
+        public string DatabaseName { get; set; } = null!;
 
 
         // URL Proxy
-        public string UrlApi { get; set; }
+        public string UrlApi { get; set; } 
     }
 }

@@ -8,12 +8,13 @@ namespace ClientMongoApp.Core.Entities
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string Last_name { get; set; }
-        public string Document_id { get; set; }
-        public string Document_type { get; set; }
-        public string Address { get; set; }
-        public DateTime Creation_date { get; set; }
+        public string Id { get; init; }
+        public string Name { get; init; }
+        public string Last_name { get; init; }
+        public string Document_id { get; init; }
+        public string Document_type { get; init; }
+        public string Address { get; init; }
+        public string Photo { get; init; }
+        public DateTime Creation_date { get; init; }
     };
 }

@@ -10,5 +10,7 @@ namespace ClientMongoApp.Application.Client.Commands
         public string Last_name { get; init; }
         public string Document_id { get; init; }
         public string Address { get; init; }
+        public string Email { get; init; }
+        public string Phone { get; init; }
     }
 }
